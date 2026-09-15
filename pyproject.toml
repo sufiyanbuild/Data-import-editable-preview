@@ -1,0 +1,63 @@
+[project]
+name = "editable_data_import"
+authors = [
+    { name = "Sufiyan Shaikh", email = "sufiyanshaikh1414@gmail.com"}
+]
+description = "Editable preview grid for the standard ERPNext/Frappe Data Import"
+requires-python = ">=3.14"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=16.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
+
+[deploy.dependencies.apt]
+packages = []
+
+[tool.ruff]
+line-length = 110
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "UP",
+    "B",
+    "RUF",
+]
+ignore = [
+    "B017",
+    "B018",
+    "B023",
+    "B904",
+    "E101",
+    "E402",
+    "E501",
+    "E741",
+    "F401",
+    "F403",
+    "F405",
+    "F722",
+    "W191",
+    "UP030",
+    "UP031",
+    "UP032",
+    "UP037",
+    "UP040",
+]
+typing-modules = ["frappe.types.DF"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"
+docstring-code-format = true
